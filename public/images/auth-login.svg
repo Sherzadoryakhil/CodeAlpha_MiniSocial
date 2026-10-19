@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" width="520" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Friends sharing photos and messages</title>
+  <desc id="d">A phone showing a photo post with a heart, surrounded by chat bubbles and friendly avatars.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCF8C6"/><stop offset="1" stop-color="#25D366"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#128C7E"/><stop offset="1" stop-color="#075E54"/></linearGradient>
+  </defs>
+  <circle cx="260" cy="200" r="170" fill="#ffffff" fill-opacity=".08"/>
+  <circle cx="260" cy="200" r="118" fill="#ffffff" fill-opacity=".08"/>
+  <!-- phone -->
+  <rect x="170" y="36" width="180" height="328" rx="28" fill="#ffffff"/>
+  <rect x="180" y="52" width="160" height="296" rx="20" fill="#F7F9F8"/>
+  <rect x="226" y="42" width="68" height="6" rx="3" fill="#D5DCD9"/>
+  <circle cx="204" cy="82" r="14" fill="url(#g1)"/>
+  <rect x="226" y="72" width="64" height="8" rx="4" fill="#075E54"/>
+  <rect x="226" y="86" width="40" height="6" rx="3" fill="#B6C2BD"/>
+  <rect x="192" y="108" width="136" height="104" rx="14" fill="url(#g2)"/>
+  <circle cx="296" cy="140" r="14" fill="#DCF8C6"/>
+  <path d="M192 212 L232 166 L262 196 L284 174 L328 212 Z" fill="#25D366" fill-opacity=".85"/>
+  <path d="M192 212 L226 182 L250 204 L278 184 L328 212 Z" fill="#064b43" fill-opacity=".45"/>
+  <rect x="192" y="224" width="112" height="7" rx="3.5" fill="#B6C2BD"/>
+  <rect x="192" y="238" width="80" height="7" rx="3.5" fill="#D5DCD9"/>
+  <path d="M206 270 c-8-9-22-2-18 9 3 8 18 16 18 16 s15-8 18-16 c4-11-10-18-18-9z" fill="#25D366"/>
+  <rect x="238" y="266" width="38" height="8" rx="4" fill="#B6C2BD"/>
+  <rect x="192" y="304" width="136" height="30" rx="15" fill="#E4EAE7"/>
+  <rect x="204" y="316" width="56" height="6" rx="3" fill="#B6C2BD"/>
+  <!-- bubbles -->
+  <g>
+    <path d="M40 96 h120 a16 16 0 0 1 16 16 v36 a16 16 0 0 1 -16 16 h-92 l-24 20 v-20 h-4 a16 16 0 0 1 -16 -16 v-36 a16 16 0 0 1 16 -16z" fill="#DCF8C6"/>
+    <rect x="52" y="116" width="88" height="8" rx="4" fill="#075E54"/>
+    <rect x="52" y="134" width="60" height="8" rx="4" fill="#128C7E"/>
+  </g>
+  <g>
+    <path d="M360 220 h96 a16 16 0 0 1 16 16 v34 a16 16 0 0 1 -16 16 h-4 v20 l-24 -20 h-68 a16 16 0 0 1 -16 -16 v-34 a16 16 0 0 1 16 -16z" fill="#25D366"/>
+    <rect x="374" y="240" width="72" height="8" rx="4" fill="#04231c"/>
+    <rect x="374" y="258" width="48" height="8" rx="4" fill="#064b43"/>
+  </g>
+  <!-- avatars -->
+  <g>
+    <circle cx="90" cy="290" r="34" fill="#ffffff"/><circle cx="90" cy="290" r="30" fill="url(#g1)"/>
+    <circle cx="90" cy="281" r="10" fill="#075E54"/><path d="M68 312 a22 18 0 0 1 44 0z" fill="#075E54"/>
+  </g>
+  <g>
+    <circle cx="436" cy="110" r="30" fill="#ffffff"/><circle cx="436" cy="110" r="26" fill="#128C7E"/>
+    <circle cx="436" cy="102" r="9" fill="#DCF8C6"/><path d="M417 128 a19 15 0 0 1 38 0z" fill="#DCF8C6"/>
+  </g>
+  <path d="M400 168 c-6-7-17-2-14 7 2 6 14 12 14 12 s12-6 14-12 c3-9-8-14-14-7z" fill="#25D366"/>
+  <circle cx="52" cy="206" r="6" fill="#DCF8C6"/><circle cx="478" cy="330" r="8" fill="#25D366"/><circle cx="130" cy="356" r="5" fill="#ffffff" fill-opacity=".6"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" width="520" height="400" role="img" aria-labelledby="t d">
+  <title id="t">A growing circle of friends</title>
+  <desc id="d">A ring of friendly avatars connected by lines around a central chat bubble with a heart.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCF8C6"/><stop offset="1" stop-color="#25D366"/></linearGradient>
+  </defs>
+  <circle cx="260" cy="200" r="170" fill="#ffffff" fill-opacity=".07"/>
+  <circle cx="260" cy="200" r="120" fill="none" stroke="#ffffff" stroke-opacity=".25" stroke-width="2" stroke-dasharray="6 8"/>
+  <g stroke="#DCF8C6" stroke-opacity=".55" stroke-width="2.5" stroke-linecap="round">
+    <line x1="260" y1="200" x2="260" y2="62"/><line x1="260" y1="200" x2="380" y2="130"/>
+    <line x1="260" y1="200" x2="388" y2="276"/><line x1="260" y1="200" x2="150" y2="300"/>
+    <line x1="260" y1="200" x2="132" y2="130"/>
+  </g>
+  <!-- center bubble -->
+  <path d="M206 160 h108 a22 22 0 0 1 22 22 v44 a22 22 0 0 1 -22 22 h-62 l-30 26 v-26 h-16 a22 22 0 0 1 -22 -22 v-44 a22 22 0 0 1 22 -22z" fill="#ffffff"/>
+  <path d="M260 226 c-18-16-30-26-30-40 a15 15 0 0 1 30 -6 a15 15 0 0 1 30 6 c0 14-12 24-30 40z" fill="#25D366"/>
+  <!-- avatars -->
+  <g><circle cx="260" cy="62" r="38" fill="#fff"/><circle cx="260" cy="62" r="33" fill="url(#g1)"/><circle cx="260" cy="53" r="11" fill="#075E54"/><path d="M236 86 a24 20 0 0 1 48 0z" fill="#075E54"/></g>
+  <g><circle cx="380" cy="130" r="34" fill="#fff"/><circle cx="380" cy="130" r="29" fill="#128C7E"/><circle cx="380" cy="122" r="10" fill="#DCF8C6"/><path d="M359 150 a21 17 0 0 1 42 0z" fill="#DCF8C6"/></g>
+  <g><circle cx="388" cy="276" r="38" fill="#fff"/><circle cx="388" cy="276" r="33" fill="url(#g1)"/><circle cx="388" cy="267" r="11" fill="#064b43"/><path d="M364 300 a24 20 0 0 1 48 0z" fill="#064b43"/></g>
+  <g><circle cx="150" cy="300" r="34" fill="#fff"/><circle cx="150" cy="300" r="29" fill="#075E54"/><circle cx="150" cy="292" r="10" fill="#DCF8C6"/><path d="M129 320 a21 17 0 0 1 42 0z" fill="#DCF8C6"/></g>
+  <g><circle cx="132" cy="130" r="38" fill="#fff"/><circle cx="132" cy="130" r="33" fill="url(#g1)"/><circle cx="132" cy="121" r="11" fill="#128C7E"/><path d="M108 154 a24 20 0 0 1 48 0z" fill="#128C7E"/></g>
+  <!-- plus badge -->
+  <circle cx="452" cy="60" r="26" fill="#25D366"/><path d="M452 47 v26 M439 60 h26" stroke="#04231c" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="60" cy="210" r="7" fill="#DCF8C6"/><circle cx="470" cy="350" r="8" fill="#25D366"/><circle cx="250" cy="372" r="5" fill="#fff" fill-opacity=".6"/>
+</svg>
