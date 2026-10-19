@@ -1,71 +1,120 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Connectly
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A mini social media platform built with **Laravel 12** for the CodeAlpha Internship (Task 2).
+Users can register, create a profile, post text and images, comment, like, and follow each other.
+The interface is inspired by a WhatsApp-style green palette and follows basic HCI principles
+(clear feedback, consistent layout, accessible forms, mobile-friendly).
 
-## About Laravel
+> Screenshots: see the `docs/screenshots/` folder (add yours using `docs/SCREENSHOTS.md`).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Authentication:** register, log in, log out (Laravel Breeze, restyled with Bootstrap 5).
+- **Profiles:** name, unique username, bio (max 160), profile photo, public profile page with posts.
+- **Posts:** create, view, edit, delete your own posts, with optional image (max 2 MB). Feed shows all users' posts, newest first, 10 per page.
+- **Comments:** add comments (max 500), edit/delete your own. Feed shows the latest 2, post page shows all.
+- **Likes:** like/unlike a post, one like per user per post, live count.
+- **Follow system:** follow/unfollow users, follower and following lists, counts on profiles. You cannot follow yourself.
+- **Polish:** character counters, loading state on submit, dismissible alerts, page titles, friendly 403/404/419/429/500 pages, skip link and ARIA labels.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Out of scope by design: search/explore, email verification, password reset.
 
-## Learning Laravel
+## Tech stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Layer | Technology |
+|---|---|
+| Backend | PHP 8.2, Laravel 12 |
+| Database | MySQL 8 |
+| Frontend | Blade, HTML, CSS, JavaScript, Bootstrap 5 (no React or Vue) |
+| Auth | Laravel Breeze (Blade stack) |
+| Build | Vite, Node.js |
+| Tests | PHPUnit feature tests (in-memory SQLite) |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Requirements
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+PHP 8.2+, Composer 2, Node.js 20+ and npm, MySQL 8 (for example via XAMPP), Git.
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git clone https://github.com/<your-username>/connectly.git
+cd connectly
 
-### Premium Partners
+composer install
+npm install
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+cp .env.example .env        # on Windows PowerShell: copy .env.example .env
+php artisan key:generate
+```
 
-## Contributing
+Create an empty MySQL database (for example `connectly`) and set it in `.env`:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=connectly
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+Then:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+php artisan migrate --seed     # creates tables and demo data
+php artisan storage:link       # makes uploaded images public
+npm run build                  # or: npm run dev while developing
+php artisan serve
+```
 
-## Security Vulnerabilities
+Open http://127.0.0.1:8000.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Demo account (from the seeder):** `demo@connectly.test` / `password`
+
+## Running the tests
+
+```bash
+php artisan test
+```
+
+Tests use an in-memory SQLite database, so your MySQL data is never touched.
+They cover authentication, profiles, posts, comments, likes, follows, security and UI polish.
+
+## Security measures
+
+- CSRF protection on every form (all write routes are in the `web` group; tested).
+- Passwords hashed (bcrypt); login lockout after 5 failed attempts; registration throttled (10 per minute).
+- Validation in Form Requests; ownership enforced with Policies (users can edit/delete only their own content).
+- Mass-assignment protection: `user_id`, `post_id`, `profile_photo_path` cannot be set from a form.
+- Output escaped by Blade (XSS); queries use Eloquent/parameter binding (SQL injection).
+- Uploads: images only (jpg, jpeg, png, webp), max 2 MB, content checked, random file names; SVG and disguised files are rejected.
+- Database integrity: unique like and follow rows, cascading foreign keys, MySQL triggers blocking self-follows.
+- Security headers: X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy.
+
+## Deploying to production (notes)
+
+- Set `APP_ENV=production` and **`APP_DEBUG=false`**, and never commit `.env`.
+- Serve over HTTPS and consider adding an HSTS header at the web server.
+- Run `php artisan config:cache route:cache view:cache` and `npm run build`.
+- A Content-Security-Policy header is not included because the views use inline scripts and styles.
+
+## Project structure (main parts)
+
+```
+app/Http/Controllers   Post, Comment, Like, Follow, Profile controllers
+app/Http/Requests      Validation and authorization
+app/Policies           Post and Comment ownership rules
+app/Models             User, Post, Comment
+database/migrations    users, posts, comments, likes, follows (+ triggers)
+resources/views        Blade pages and components
+tests/Feature          Feature tests
+docs/                  Testing guide, screenshots and submission checklists
+```
+
+## Author
+
+<Sherzad Oryakhil> - CodeAlpha Internship, Task 2.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# CodeAlpha_MiniSocial
-A mini social media platform built with **Laravel 12** for the CodeAlpha Internship (Task 2).
->>>>>>> 05eb0175794121aa1f184a878d89f4292712fe98
-=======
-# CodeAlpha_MiniSocial
-A mini social media platform built with **Laravel 12** for the CodeAlpha Internship (Task 2).
->>>>>>> 05eb0175794121aa1f184a878d89f4292712fe98
+For educational and portfolio purposes.
