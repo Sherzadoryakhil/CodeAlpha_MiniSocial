@@ -1,4 +1,4 @@
-# Connectly
+# MiniSocial
 
 A mini social media platform built with **Laravel 12** for the CodeAlpha Internship (Task 2).
 Users can register, create a profile, post text and images, comment, like, and follow each other.
@@ -37,8 +37,8 @@ PHP 8.2+, Composer 2, Node.js 20+ and npm, MySQL 8 (for example via XAMPP), Git.
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/connectly.git
-cd connectly
+git clone https://github.com/<your-username>/MiniSocial.git
+cd MiniSocial
 
 composer install
 npm install
@@ -47,13 +47,13 @@ cp .env.example .env        # on Windows PowerShell: copy .env.example .env
 php artisan key:generate
 ```
 
-Create an empty MySQL database (for example `connectly`) and set it in `.env`:
+Create an empty MySQL database (for example `MiniSocial`) and set it in `.env`:
 
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=connectly
+DB_DATABASE=MiniSocial
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -69,7 +69,7 @@ php artisan serve
 
 Open http://127.0.0.1:8000.
 
-**Demo account (from the seeder):** `demo@connectly.test` / `password`
+**Demo account (from the seeder):** `demo@MiniSocial.test` / `password`
 
 ## Running the tests
 
