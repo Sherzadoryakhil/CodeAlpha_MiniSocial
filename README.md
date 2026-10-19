@@ -113,7 +113,7 @@ docs/                  Testing guide, screenshots and submission checklists
 
 ## Author
 
-<Sherzad Oryakhil> - CodeAlpha Internship, Task 2.
+<Your Sherzad Oryakhil> - CodeAlpha Internship, Task 2.
 
 ## License
 
