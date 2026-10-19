@@ -37,7 +37,7 @@ PHP 8.2+, Composer 2, Node.js 20+ and npm, MySQL 8 (for example via XAMPP), Git.
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/MiniSocial.git
+git clone https://github.com/Sherzadoryakhil/MiniSocial.git
 cd MiniSocial
 
 composer install
