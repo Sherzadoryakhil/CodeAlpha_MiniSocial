@@ -5,8 +5,6 @@ Users can register, create a profile, post text and images, comment, like, and f
 The interface is inspired by a WhatsApp-style green palette and follows basic HCI principles
 (clear feedback, consistent layout, accessible forms, mobile-friendly).
 
-> Screenshots: see the `docs/screenshots/` folder (add yours using `docs/SCREENSHOTS.md`).
-
 ## Features
 
 - **Authentication:** register, log in, log out (Laravel Breeze, restyled with Bootstrap 5).
